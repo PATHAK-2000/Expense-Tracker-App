@@ -1,0 +1,38 @@
+.expense__main{
+    margin-top: 4%;
+    border: 1px solid;
+    width: 40%;
+    padding: 3%;
+    margin-left: 4%;
+    text-align: center;
+}
+
+.selection{
+    border: 1px solid;
+    width: 40%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.selection__name{
+    flex: 1;
+    align-items: flex-start;
+}
+
+.selection__name h1{
+    font-size: 20px;
+    text-align: left;
+    padding-left: 4%;
+}
+
+.dropDown__visible{
+    transition: 2s ease;
+    display: block;
+}
+
+.dropDown__hidden{
+    display: none;
+}

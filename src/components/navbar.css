@@ -1,0 +1,22 @@
+.nav__main{
+    background-color: rgb(18, 18, 18);
+    border: 1px solid;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: end;
+  margin: 2.5% auto;
+  max-width: 1200px;
+  
+}
+
+.nav__links a{
+    margin-right: 6%;
+}
+
+.nav__links h3{
+    color: white;
+    font-size: 21px;
+    cursor: pointer;
+}
