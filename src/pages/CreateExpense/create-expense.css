@@ -1,38 +1,111 @@
-.expense__main{
-    margin-top: 4%;
-    border: 1px solid;
-    width: 40%;
-    padding: 3%;
-    margin-left: 4%;
-    text-align: center;
+.expense__main {
+  margin-top: 4%;
+  border: 1px solid;
+  width: 40%;
+  padding: 3%;
+  margin-left: 4%;
+  text-align: center;
 }
 
-.selection{
-    border: 1px solid;
-    width: 40%;
-    display: flex;
+.selection {
+  border: 1px solid gray;
+  width: 70%;
+  height: 37px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.selection__name {
+  flex: 1;
+  align-items: flex-start;
+}
+
+.selection__name h1 {
+  font-size: 17px;
+  text-align: left;
+  padding-left: 4%;
+}
+
+.expense__type {
+  position: relative;
+}
+
+.dropDown__visible {
+  background-color: rgb(171, 223, 243);
+  position: absolute;
+  top: 93%;
+  left: 15%;
+  width: 70%;
+}
+
+.dropDown__visible h1 {
+  font-size: 18px;
+  padding-top: 4%;
+  padding-bottom: 2%;
+  border-bottom: 1px solid gray;
+  opacity: 0.75;
+}
+
+.dropDown__visible h1:hover {
+  opacity: 1;
+  background-color: skyblue;
+  cursor: pointer;
+}
+
+.dropDown__visible h1:first-child {
+  border-top: 1px solid gray;
+}
+
+.dropDown__hidden {
+  display: none;
+}
+
+/* Desctiption */
+
+.expense__description,
+.expense__amount,.expense__submit {
+  margin-top: 1.5rem;
+}
+
+.desctiption__label, .amount__label, .type__label{
+    text-align: left;
+    width: 69%;
     margin: 0 auto;
-    align-items: center;
+    margin-bottom: 1%;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.expense__description input {
+  width: 70%;
+  padding: 1.5%;
+}
+
+.expense__amount input {
+  width: 70%;
+  padding: 1.5%;
+}
+
+/* Button */
+
+
+.expense__submit button{
+    width: 70%;
+    padding: 2%;
     cursor: pointer;
+    font-size: 18px;
+    background-color: rgb(104, 46, 104);
+    color: white;
+    font-weight: 800;
+    opacity: 0.8;
+    border: none;
     
 }
 
-.selection__name{
-    flex: 1;
-    align-items: flex-start;
-}
-
-.selection__name h1{
-    font-size: 20px;
-    text-align: left;
-    padding-left: 4%;
-}
-
-.dropDown__visible{
-    transition: 2s ease;
-    display: block;
-}
-
-.dropDown__hidden{
-    display: none;
+.expense__submit button:hover{
+    opacity: 1;
+   
 }
