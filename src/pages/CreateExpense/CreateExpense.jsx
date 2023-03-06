@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import "./create-expense.css";
+import { useNavigate } from "react-router-dom";
 
 import More from "../../assets/ExpandMore.svg";
 import Less from "../../assets/ExpandLess.svg";
@@ -7,6 +8,8 @@ import UserContext from "../../Context";
 
 const CreateExpense = () => {
   const [dropMenu, setDropMenu] = useState(true);
+
+  const navigate = useNavigate();
 
   const {
     selectType,
@@ -40,9 +43,15 @@ const CreateExpense = () => {
   };
 
   let handleSubmit = () => {
-    setFinalData({type: selectType, description: description, amount: amount})
+    setFinalData([
+      ...finalData,
+      { type: selectType, description: description, amount: amount },
+    ]);
+    setSelectType("");
+    setDescription("");
+    setAmount("");
+    navigate("/view")
   };
-  
 
   useEffect(() => {
     selectItems;
@@ -67,7 +76,7 @@ const CreateExpense = () => {
         </div>
         <div className="selection" onClick={handleClick} ref={menuRef}>
           <div className="selection__name">
-            <h1> SELECT</h1>
+            <h1> {selectType ? selectType : "SELECT"}</h1>
           </div>
           <div className="selection__img">
             {dropMenu ? (
@@ -81,11 +90,12 @@ const CreateExpense = () => {
         <div
           className={dropMenu ? "dropDown__hidden" : "dropDown__visible"}
           onClick={selectItems}
+          value={selectType}
         >
-          <h1 value="home">HOME</h1>
-          <h1 value="travel">TRAVEL</h1>
-          <h1 value="food">FOOD</h1>
-          <h1 value="misc">MISC</h1>
+          <h1 value="HOME">HOME</h1>
+          <h1 value="TRAVEL">TRAVEL</h1>
+          <h1 value="FOOD">FOOD</h1>
+          <h1 value="MISC">MISC</h1>
         </div>
       </div>
 

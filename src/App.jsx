@@ -12,11 +12,13 @@ function App() {
   const [selectType, setSelectType] = useState("");
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
-  const [finalData, setFinalData] = useState({
-    type: "",
-    description: "",
-    amount: "",
-  });
+  const [finalData, setFinalData] = useState([
+    {
+      type: "",
+      description: "",
+      amount: "",
+    },
+  ]);
 
   return (
     <div className="App">

@@ -1,0 +1,15 @@
+.view__main{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.title{
+    display: flex;
+    width: 40%;
+}
+
+.title h2{
+    flex: 1;
+    text-align: center;
+}
