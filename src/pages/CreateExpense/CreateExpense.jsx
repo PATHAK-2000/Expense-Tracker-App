@@ -47,10 +47,11 @@ const CreateExpense = () => {
       ...finalData,
       { type: selectType, description: description, amount: amount },
     ]);
+   
     setSelectType("");
     setDescription("");
     setAmount("");
-    navigate("/view")
+    navigate("/view");
   };
 
   useEffect(() => {
