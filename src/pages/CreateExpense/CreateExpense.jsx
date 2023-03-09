@@ -42,16 +42,33 @@ const CreateExpense = () => {
     setAmount(e.target.value);
   };
 
+  // useEffect(() => {
+  //   if (localStorage.length > 1) {
+  //     console.log("true");
+  //     setFinalData([
+  //       ...finalData,
+  //       {
+  //         type: JSON.parse(localStorage.getItem("type")),
+  //         description: JSON.parse(localStorage.getItem("description")),
+  //         amount: JSON.parse(localStorage.getItem("amount")),
+  //       },
+  //     ]);
+  //   }
+  // }, []);
+
   let handleSubmit = () => {
-    setFinalData([
-      ...finalData,
-      { type: selectType, description: description, amount: amount },
-    ]);
-   
-    setSelectType("");
-    setDescription("");
-    setAmount("");
-    navigate("/view");
+    if (selectType.length > 0 && description.length > 0 && amount.length > 0) {
+      setFinalData([
+        ...finalData,
+        { type: selectType, description: description, amount: amount },
+      ]);
+      setSelectType("");
+      setDescription("");
+      setAmount("");
+      navigate("/view");
+    } else {
+      navigate("/");
+    }
   };
 
   useEffect(() => {

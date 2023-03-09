@@ -4,6 +4,7 @@ import "./view-expense.css";
 const ViewExpense = () => {
   const { finalData } = useContext(UserContext);
 
+  // User-Entered Data
   let typeData = finalData?.map((datas) => datas.type);
   let DescData = finalData?.map((datas) => datas.description);
   let AmountData = finalData?.map((datas) => datas.amount);
@@ -11,6 +12,7 @@ const ViewExpense = () => {
   let typeArrayData = [];
   let DescArrayData = [];
   let AmountArrayData = [];
+
   typeData.map((data) => typeArrayData.push(data));
   DescData.map((data) => DescArrayData.push(data));
   AmountData.map((data) => AmountArrayData.push(data));
@@ -22,6 +24,7 @@ const ViewExpense = () => {
   const type = typeArrayData?.map((data, index) => (
     <p key={index} className="details__data">
       {data}
+
       {localStorage.setItem("type", JSON.stringify(typeArrayData))}
     </p>
   ));
@@ -44,8 +47,6 @@ const ViewExpense = () => {
   const getDescriptionData = JSON.parse(localStorage.getItem("description"));
   const getAmountData = JSON.parse(localStorage.getItem("amount"));
 
-  console.log("typedata", getTypeData);
-
   return (
     <div className="view__main">
       <div className="view__main__title">
@@ -57,18 +58,24 @@ const ViewExpense = () => {
       </div>
       <div className="details">
         <div className="details__type">
-          {getTypeData.map((data) => (
-            <h1 className="details__data">{data}</h1>
+          {getTypeData.map((data, index) => (
+            <h1 key={index} className="details__data">
+              {data}
+            </h1>
           ))}
         </div>
         <div className="details__description">
-          {getDescriptionData.map((data) => (
-            <h1 className="details__data">{data}</h1>
+          {getDescriptionData.map((data, index) => (
+            <h1 key={index} className="details__data">
+              {data}
+            </h1>
           ))}
         </div>
         <div className="details__amount">
-          {getAmountData.map((data) => (
-            <h1 className="details__data">{data}</h1>
+          {getAmountData.map((data, index) => (
+            <h1 key={index} className="details__data">
+              {data}
+            </h1>
           ))}
         </div>
       </div>
