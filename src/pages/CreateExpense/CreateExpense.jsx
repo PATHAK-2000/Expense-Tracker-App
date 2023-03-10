@@ -87,6 +87,7 @@ const CreateExpense = () => {
   }, []);
 
   return (
+    <div className="expense">
     <div className="expense__main">
       <div className="expense__type">
         <div className="type__label">
@@ -148,6 +149,8 @@ const CreateExpense = () => {
       <div className="expense__submit">
         <button onClick={handleSubmit}>Submit</button>
       </div>
+    </div>
+  
     </div>
   );
 };

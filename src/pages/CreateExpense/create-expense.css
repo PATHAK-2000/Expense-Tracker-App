@@ -1,3 +1,6 @@
+.expense{
+  display: flex;
+}
 .expense__main {
   margin-top: 4%;
   border: 1px solid;
@@ -6,6 +9,7 @@
   margin-left: 4%;
   text-align: center;
 }
+
 
 .selection {
   border: 1px solid gray;
@@ -32,6 +36,8 @@
 .expense__type {
   position: relative;
 }
+
+
 
 .dropDown__visible {
   background-color: rgb(171, 223, 243);
