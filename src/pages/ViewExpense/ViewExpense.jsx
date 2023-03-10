@@ -47,6 +47,15 @@ const ViewExpense = () => {
   const getDescriptionData = JSON.parse(localStorage.getItem("description"));
   const getAmountData = JSON.parse(localStorage.getItem("amount"));
 
+  let numberAmountArray = getAmountData.map(Number);
+
+  let sum = 0;
+  for (let i = 0; i < numberAmountArray.length; i++) {
+    sum += numberAmountArray[i];
+  }
+
+  console.log(sum);
+
   return (
     <div className="view__main">
       <div className="view__main__title">
@@ -78,6 +87,9 @@ const ViewExpense = () => {
             </h1>
           ))}
         </div>
+      </div>
+      <div className="totalAmount">
+        <h1 className="amount">{sum}</h1>
       </div>
     </div>
   );
